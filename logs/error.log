@@ -1,0 +1,368 @@
+2018-06-29 15:24:59 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:24:59 Error: [PDOException] SQLSTATE[HY000] [1049] Unknown database 'prova_web2'
+Request URL: /users
+Stack Trace:
+#0 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Database/Driver.php(92): PDO->__construct('mysql:host=loca...', 'root', 'ifpe', Array)
+#1 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(106): Cake\Database\Driver->_connect('mysql:host=loca...', Array)
+#2 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Database/Connection.php(391): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/ORM/Table.php(547): Cake\Database\Connection->getSchemaCollection()
+#8 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/ORM/Query.php(270): Cake\ORM\Table->getSchema()
+#9 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/ORM/Query.php(168): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\UsersTable))
+#10 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/ORM/Table.php(1753): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\UsersTable))
+#11 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/ORM/Table.php(1347): Cake\ORM\Table->query()
+#12 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Datasource/Paginator.php(180): Cake\ORM\Table->find('all', Array)
+#13 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Controller/Component/PaginatorComponent.php(200): Cake\Datasource\Paginator->paginate(Object(App\Model\Table\UsersTable), Array, Array)
+#14 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Controller/Controller.php(872): Cake\Controller\Component\PaginatorComponent->paginate(Object(App\Model\Table\UsersTable), Array)
+#15 /home/alunoifpe/Documentos/prova/src/Controller/UsersController.php(25): Cake\Controller\Controller->paginate(Object(App\Model\Table\UsersTable))
+#16 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Controller/Controller.php(596): App\Controller\UsersController->index()
+#17 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#18 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#19 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Http/BaseApplication.php(228): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(158): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 /home/alunoifpe/Documentos/prova/vendor/cakephp/cakephp/src/Http/Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#29 /home/alunoifpe/Documentos/prova/webroot/index.php(40): Cake\Http\Server->run()
+#30 {main}
+
+
+2018-06-29 15:25:07 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:26:53 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:26:53 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:26:53 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:27:47 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:27:59 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:28:04 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:28:48 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:28:48 Error: [Error] Method name must be a string
+Request URL: /users/add
+Referer URL: http://localhost:8765/users/add
+Stack Trace:
+#0 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Controller/Controller.php(596): App\Controller\UsersController->add()
+#1 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#2 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#3 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/BaseApplication.php(228): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#4 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#5 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(158): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#6 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#7 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#9 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#11 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 /home/alunoifpe/Documentos/agendamento_blog/webroot/index.php(40): Cake\Http\Server->run()
+#14 {main}
+
+
+2018-06-29 15:29:44 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:29:50 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:30:10 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:30:18 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:30:23 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:30:32 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:30:32 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:30:46 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:30:46 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:30:59 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:31:17 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:31:37 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:31:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Monitors_users could not be found.
+Exception Attributes: array (
+  'class' => 'Monitors_users',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /monitors_users
+Stack Trace:
+#0 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(39): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(91): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/BaseApplication.php(228): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(158): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 /home/alunoifpe/Documentos/agendamento_blog/webroot/index.php(40): Cake\Http\Server->run()
+#13 {main}
+
+
+2018-06-29 15:32:41 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:32:56 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:32:58 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:32:59 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:33:00 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:33:01 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:33:02 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:33:03 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:33:06 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:33:41 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:33:41 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:34:01 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:34:02 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:34:35 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:35:02 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:35:02 Error: [Error] Method name must be a string
+Request URL: /users/add
+Referer URL: http://localhost:8765/users/add
+Stack Trace:
+#0 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Controller/Controller.php(596): App\Controller\UsersController->add()
+#1 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#2 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#3 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/BaseApplication.php(228): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#4 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#5 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(158): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#6 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#7 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#9 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#11 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 /home/alunoifpe/Documentos/agendamento_blog/webroot/index.php(40): Cake\Http\Server->run()
+#14 {main}
+
+
+2018-06-29 15:36:14 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:36:14 Error: [ParseError] syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+Request URL: /users/add
+Referer URL: http://localhost:8765/users/add
+Stack Trace:
+#0 /home/alunoifpe/Documentos/agendamento_blog/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/home/alunoifpe...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controller\\...')
+#2 [internal function]: spl_autoload_call('App\\Controller\\...')
+#3 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Core/App.php(152): class_exists('App\\Controller\\...')
+#4 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Core/App.php(64): Cake\Core\App::_classExistsInBase('\\Controller\\Use...', 'App')
+#5 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(89): Cake\Core\App::className('Users', 'Controller', 'Controller')
+#6 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(37): Cake\Http\ControllerFactory->getControllerClass(Object(Cake\Http\ServerRequest))
+#7 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(91): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/BaseApplication.php(228): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(158): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 /home/alunoifpe/Documentos/agendamento_blog/webroot/index.php(40): Cake\Http\Server->run()
+#19 {main}
+
+
+2018-06-29 15:36:41 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:38:23 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:38:39 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:38:46 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:38:46 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:38:49 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:39:02 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:39:02 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:45:28 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:46:32 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:46:32 Error: [Error] Method name must be a string
+Request URL: /users/add
+Referer URL: http://localhost:8765/users/add
+Stack Trace:
+#0 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Controller/Controller.php(596): App\Controller\UsersController->add()
+#1 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#2 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#3 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/BaseApplication.php(228): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#4 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#5 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(158): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#6 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#7 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#9 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#11 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 /home/alunoifpe/Documentos/agendamento_blog/webroot/index.php(40): Cake\Http\Server->run()
+#14 {main}
+
+
+2018-06-29 15:49:38 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:49:47 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:49:51 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:49:51 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:49:53 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:50:02 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:50:07 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:50:07 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:50:12 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:50:15 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:50:15 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:50:16 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:50:33 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:50:37 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:51:07 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:51:10 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:51:33 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:51:46 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:51:56 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:52:00 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:52:04 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:52:19 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:52:19 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:52:23 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:52:24 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:52:37 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:52:37 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:52:45 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:52:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Login could not be found.
+Exception Attributes: array (
+  'class' => 'Login',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /login
+Stack Trace:
+#0 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(39): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(91): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/BaseApplication.php(228): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(158): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 /home/alunoifpe/Documentos/agendamento_blog/webroot/index.php(40): Cake\Http\Server->run()
+#13 {main}
+
+
+2018-06-29 15:52:58 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:53:06 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:53:15 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:53:15 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:53:18 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:54:03 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:54:15 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:56:57 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:57:07 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:57:07 Error: [PDOException] SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1
+Request URL: /monitors-users/add
+Referer URL: http://localhost:8765/monitors-users/add
+Stack Trace:
+#0 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Connection.php(334): Cake\Database\Statement\MysqlStatement->execute()
+#2 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(68): Cake\Database\Connection->Cake\Database\{closure}()
+#3 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Connection.php(337): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#4 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Query.php(219): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(2102): Cake\Database\Query->execute()
+#6 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(1996): Cake\ORM\Table->_insert(Object(App\Model\Entity\MonitorsUser), Array)
+#7 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(1909): Cake\ORM\Table->_processSave(Object(App\Model\Entity\MonitorsUser), Object(ArrayObject))
+#8 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(1624): Cake\ORM\Table->Cake\ORM\{closure}()
+#9 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Connection.php(726): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#10 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(1625): Cake\Database\Connection->transactional(Object(Closure))
+#11 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(1910): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#12 /home/alunoifpe/Documentos/agendamento_blog/src/Controller/MonitorsUsersController.php(58): Cake\ORM\Table->save(Object(App\Model\Entity\MonitorsUser))
+#13 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Controller/Controller.php(596): App\Controller\MonitorsUsersController->add()
+#14 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#15 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MonitorsUsersController))
+#16 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/BaseApplication.php(228): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#18 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(158): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#22 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#23 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#24 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#25 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 /home/alunoifpe/Documentos/agendamento_blog/webroot/index.php(40): Cake\Http\Server->run()
+#27 {main}
+
+
+2018-06-29 15:57:19 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:58:03 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 15:58:03 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'monitor_id' doesn't have a default value
+Request URL: /monitors-users/add
+Referer URL: http://localhost:8765/monitors-users/add
+Stack Trace:
+#0 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Connection.php(334): Cake\Database\Statement\MysqlStatement->execute()
+#2 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(68): Cake\Database\Connection->Cake\Database\{closure}()
+#3 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Connection.php(337): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#4 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Query.php(219): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(2102): Cake\Database\Query->execute()
+#6 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(1996): Cake\ORM\Table->_insert(Object(App\Model\Entity\MonitorsUser), Array)
+#7 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(1909): Cake\ORM\Table->_processSave(Object(App\Model\Entity\MonitorsUser), Object(ArrayObject))
+#8 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(1624): Cake\ORM\Table->Cake\ORM\{closure}()
+#9 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Connection.php(726): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#10 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(1625): Cake\Database\Connection->transactional(Object(Closure))
+#11 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(1910): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#12 /home/alunoifpe/Documentos/agendamento_blog/src/Controller/MonitorsUsersController.php(58): Cake\ORM\Table->save(Object(App\Model\Entity\MonitorsUser))
+#13 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Controller/Controller.php(596): App\Controller\MonitorsUsersController->add()
+#14 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#15 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MonitorsUsersController))
+#16 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/BaseApplication.php(228): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#18 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(158): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#22 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#23 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#24 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#25 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 /home/alunoifpe/Documentos/agendamento_blog/webroot/index.php(40): Cake\Http\Server->run()
+#27 {main}
+
+
+2018-06-29 16:00:07 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 16:00:07 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'monitor_id' doesn't have a default value
+Request URL: /monitors-users/add
+Referer URL: http://localhost:8765/monitors-users/add
+Stack Trace:
+#0 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Connection.php(334): Cake\Database\Statement\MysqlStatement->execute()
+#2 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(68): Cake\Database\Connection->Cake\Database\{closure}()
+#3 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Connection.php(337): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#4 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Query.php(219): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(2102): Cake\Database\Query->execute()
+#6 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(1996): Cake\ORM\Table->_insert(Object(App\Model\Entity\MonitorsUser), Array)
+#7 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(1909): Cake\ORM\Table->_processSave(Object(App\Model\Entity\MonitorsUser), Object(ArrayObject))
+#8 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(1624): Cake\ORM\Table->Cake\ORM\{closure}()
+#9 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Connection.php(726): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#10 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(1625): Cake\Database\Connection->transactional(Object(Closure))
+#11 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(1910): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#12 /home/alunoifpe/Documentos/agendamento_blog/src/Controller/MonitorsUsersController.php(58): Cake\ORM\Table->save(Object(App\Model\Entity\MonitorsUser))
+#13 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Controller/Controller.php(596): App\Controller\MonitorsUsersController->add()
+#14 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#15 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MonitorsUsersController))
+#16 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/BaseApplication.php(228): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#18 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(158): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#22 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(98): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#23 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#24 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#25 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Http/Server.php(98): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 /home/alunoifpe/Documentos/agendamento_blog/webroot/index.php(40): Cake\Http\Server->run()
+#27 {main}
+
+
+2018-06-29 16:00:12 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 16:00:14 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 16:00:30 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2018-06-29 16:00:30 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.

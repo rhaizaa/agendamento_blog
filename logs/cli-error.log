@@ -1,0 +1,20 @@
+2018-06-29 15:14:26 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'agendamento.monitors_students' doesn't exist in /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Schema/Collection.php on line 131
+Stack Trace:
+#0 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'monitors_studen...', Array, Object(Cake\Database\Schema\TableSchema))
+#1 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(63): Cake\Database\Schema\Collection->describe('monitors_studen...', Array)
+#2 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(548): Cake\Database\Schema\CachedCollection->describe('monitors_studen...')
+#3 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/ORM/Table.php(673): Cake\ORM\Table->getSchema()
+#4 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(220): Cake\ORM\Table->getPrimaryKey()
+#5 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(130): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(113): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'monitors_studen...', 'MonitorsStudent...')
+#7 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(100): Bake\Shell\Task\ModelTask->bake('MonitorsStudent...')
+#8 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/bake/src/Shell/BakeShell.php(272): Bake\Shell\Task\ModelTask->main('MonitorsStudent...')
+#9 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Collection/CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('MonitorsStudent...', 0)
+#10 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/bake/src/Shell/BakeShell.php(273): Cake\Collection\Collection->each(Object(Closure))
+#11 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Console/Shell.php(518): Bake\Shell\BakeShell->all('monitors_studen...')
+#12 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Console/CommandRunner.php(342): Cake\Console\Shell->runCommand(Array, true)
+#13 /home/alunoifpe/Documentos/agendamento_blog/vendor/cakephp/cakephp/src/Console/CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#14 /home/alunoifpe/Documentos/agendamento_blog/bin/cake.php(12): Cake\Console\CommandRunner->run(Array)
+#15 {main}
+
+

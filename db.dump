@@ -1,0 +1,36 @@
+  DROP TABLE IF EXISTS `users`;
+  CREATE TABLE `users` (
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `username` varchar(50) NOT NULL,
+    `password` varchar(255) NOT NULL,
+    `email` varchar(50) NOT NULL,
+    `role` varchar(20) NOT NULL,
+    `created` datetime DEFAULT NULL,
+    `modified` datetime DEFAULT NULL,
+    PRIMARY KEY (`id`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+  DROP TABLE IF EXISTS `monitors`;
+  CREATE TABLE `monitors` (
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `user_id` int(10) unsigned NOT NULL,
+    `email` varchar(50) NOT NULL,
+    `discipline` varchar(50) NOT NULL,
+    PRIMARY KEY (`id`),
+    CONSTRAINT FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+  DROP TABLE IF EXISTS `monitors_students`;
+  CREATE TABLE `monitors_users` (
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `monitor_id` int(10) unsigned NOT NULL,
+    `user_id` int(10) unsigned NOT NULL,
+    `start_time` datetime NOT NULL,
+    `end_time` datetime NOT NULL,
+    `status` ENUM('pendente', 'realizado', 'aluno faltou', 'cancelado'),
+    `created` datetime DEFAULT NULL,
+    `modified` datetime DEFAULT NULL,
+    PRIMARY KEY (`id`),
+    CONSTRAINT  FOREIGN KEY (`monitor_id`) REFERENCES `users` (`id`),
+    CONSTRAINT  FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
